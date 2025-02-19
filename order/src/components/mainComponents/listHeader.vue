@@ -1,18 +1,18 @@
 <template lang="pug">
 div.listHeader
   el-menu(mode='horizontal' :router="true" background-color='lightblue' text-color='black')
-    el-menu-item(index='1' route="/list" ) 
+    el-menu-item(index='1' route="/list" )
       img(:style="logoSize" src="../../assets/image/logo.png")
-      span.header {{header}}
+      span.header {{ header }}
     el-submenu(index='2' v-if="this.$store.state.adminModule.isLogin" )
-      template(slot='title' ) 
-        span(style="font-size:18px") 訂單相關
+      template(slot='title' )
+        span.menu-item 訂單相關
       el-menu-item( v-for="item in listNav" :index="item.route") {{item.name}}
-    el-submenu(index='3'  v-if="this.$store.state.adminModule.isLogin"  :disabled="show") 
-      template(slot='title' ) 
-        span(style="font-size:18px") 產品相關
+    el-submenu(index='3'  v-if="this.$store.state.adminModule.isLogin"  :disabled="show")
+      template(slot='title')
+        span.menu-item 產品相關
       el-menu-item( v-for="item in productNav" :index="item.route") {{item.name}}
-   
+
     logoutBtn
     p.userName(v-if="showUserName") Welcome! {{ userName }}
     //- el-menu-item(index='3' disabled='') Info 不可點按狀態 官方寫法
@@ -28,7 +28,7 @@ export default {
       showUserName: false,
       // activatedFlag: false,
       userName: "",
-      header: "Order List",
+      header: "Happy Bird",
       logoSize: [
         {
           width: "100px",
@@ -74,6 +74,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.menu-item {
+  font-size: 18px;
+}
 .listHeader {
   position: relative;
   box-sizing: border-box;
