@@ -1,9 +1,11 @@
+node 版本建議 18 為佳
+
 ## 本專案使用到的技術
 * 前端：Vue2 + element UI + SCSS
 * 資料： 以 json-server 模擬後端環境，串接 API
 * e2e 測試：playwright + cypress
 * 部署：前台（Netlify） + json-server (Render) / Docker
-  
+
 ## File details 資料夾結構
 ```
 |- src/
@@ -69,7 +71,7 @@ password: 111111
 ## Project setup 如何啟動專案
 
 ### Install project with yarn
-``` 
+```
 cd order
 yarn install
 ```
@@ -91,12 +93,12 @@ npx json-server --watch db.json -p 3001(指定port)
 
 [step2] yarn run test
 
-[step3] npx playwright show-report   
+[step3] npx playwright show-report
 
 逐步查看各環節的測試
 [step1]  git checkout feature/e2e-testing
 
-[step2]  npx playwright test --debug 或 npx playwright test --headed 
+[step2]  npx playwright test --debug 或 npx playwright test --headed
 ```
 
 
